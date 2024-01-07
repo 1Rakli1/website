@@ -1,0 +1,35 @@
+{%extends "base.html"%}
+{%block content%}
+<br>
+<br>
+<div class="container-md">
+    {%for message in get_flashed_messages()%}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+    {%endfor%}
+    {%for vacancies in vacancy%}
+    {%if vacancies.status!="accepted"%}
+    <div class="card text-center">
+        <div class="card-header">
+            სახელი და გვარი: {{vacancies.name}}
+            <h5 class="card-title">კომპანია: {{vacancies.company_name}}</h5>
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">ჩვენს შესახებ: </h7>
+            <br>
+            <br>
+            <p style="color: black;">{{vacancies.about}}</p>
+            <h6>ხელფასი: {{vacancies.salary}}</h6>
+        </div>
+        <div class="card-footer text-body-secondary">
+            <a href="/accept/{{vacancies.id}}" class="btn btn-success">accept</a>
+            <a href="/delete/{{vacancies.id}}" class="btn btn-danger">delete</a>
+        </div>
+  </div>
+  <br>
+  <br>
+  {%endif%}
+  {%endfor%}
+</div>
+{%endblock%}

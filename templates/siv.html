@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container-md">
+{%for field,errors in form.errors.items()%}
+        {%for error in errors%}
+            <div class="alert alert-warning">
+                {{error}}
+            </div>
+        {%endfor%}
+    {%endfor%}
+    <div class="vacancy">
+        <form method="post">
+        
+            {{form.hidden_tag()}}
+            <p class="title_vacancy">my siv :</p>
+            {{current_user.siv}}
+            <br>
+            <br>
+            <a href="/edit_siv/{{current_user.id}}" class="btn btn-primary"style="width:40%">edit</a>
+        </form>
+    </div>
+</div>
+{%endblock%}

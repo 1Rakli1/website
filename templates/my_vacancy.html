@@ -1,0 +1,56 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container-md">
+    <h4 style="color: white;">accepted: </h4>
+    {%for vacancies in vacancy%}
+    {%if current_user.name==vacancies.name%}
+        {%if vacancies.status=="accepted"%}
+        <div class="card text-center">
+            <div class="card-header">
+                სახელი და გვარი: {{vacancies.name}}
+                <h5 class="card-title">კომპანია: {{vacancies.company_name}}</h5>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">ჩვენს შესახებ: </h7>
+                <br>
+                <br>
+                <p style="color: black;">{{vacancies.about}}</p>
+                <h6>ხელფასი: {{vacancies.salary}}</h6>
+            </div>
+            <div class="card-footer text-body-secondary">
+            <a href="/edit_vacancy/{{vacancies.id}}" class="btn btn-warning">edit</a>
+            <a href="/delete/{{vacancies.id}}" class="btn btn-danger">delete</a>
+        </div>
+  </div>
+  <br>
+  <br>
+  {%endif%}
+  {%endif%}
+  {%endfor%}
+  <h4 style="color: white;">waiter: </h4>
+  {%for vacancies in vacancy%}
+  {%if current_user.name==vacancies.name%}
+        {%if vacancies.status=="waiter"%}
+        <div class="card text-center">
+            <div class="card-header">
+                სახელი და გვარი: {{vacancies.name}}
+                <h5 class="card-title">კომპანია: {{vacancies.company_name}}</h5>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">ჩვენს შესახებ: </h7>
+                <br>
+                <br>
+                <p style="color: black;">{{vacancies.about}}</p>
+                <h6>ხელფასი: {{vacancies.salary}}</h6>
+            </div>
+            <div class="card-footer text-body-secondary">
+                <a href="/delete/{{vacancies.id}}" class="btn btn-danger">delete</a>
+            </div>
+  </div>
+  <br>
+  <br>
+  {%endif%}
+  {%endif%}
+  {%endfor%}
+</div>
+{%endblock%}

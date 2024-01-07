@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-md">
+      {%if current_user.role=="company"%}
+          <a class="navbar-brand"style="color: white;" href="/home">company</a>
+      {%endif%}
+      {%if current_user.role=="admin"%}
+          <a class="navbar-brand"style="color: white;" href="/home">admin</a>
+      {%endif%}
+      {%if current_user.role=="worker"%}
+          <a class="navbar-brand"style="color: white;" href="/home">worker</a>
+      {%endif%}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {%if current_user.role=="worker"%}
+          <li class="nav-item">
+            <a class="nav-link active" style="color: white;" aria-current="page" href="/siv">my siv</a>
+          </li>
+          {%endif%}
+          {%if current_user.role=="company" or current_user.role=="admin"%}
+          <li class="nav-item">
+            <a class="nav-link active" style="color: white;" aria-current="page" href="/add_vacancy">add Vacancy</a>
+          </li>
+          {%endif%}
+          {%if current_user.role=="company" or current_user.role=="admin"%}
+          <li class="nav-item">
+            <a class="nav-link active" style="color: white;" aria-current="page" href="/my_vacancy">my vacancy</a>
+          </li>
+          {%endif%}
+          {%if current_user.role=="admin"%}
+          <li class="nav-item">
+            <a class="nav-link active" style="color: white;" aria-current="page" href="/confirm_vacancy">confirm Vacancy</a>
+          </li>
+          {%endif%}
+        </ul>
+        <form class="d-flex" role="search">
+          <a href="/logout" style="text-decoration: none;color:white;">logout</a>
+        </form>
+        
+      </div>
+    </div>
+  </nav>

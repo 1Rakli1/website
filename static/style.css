@@ -1,0 +1,94 @@
+body{
+    margin:0;
+    padding:0;
+    background-size: cover;;
+    background-image: linear-gradient(to right,blue,rgb(77, 0, 128),purple);
+}
+.vacancy{
+    width: 1000px;
+    text-align: center;
+    box-shadow: 0 0 40px rgb(47, 0, 255);
+    background-color: rgb(255, 255, 255);
+    margin: 15% auto;
+    padding: 50px;
+}
+.sign{
+    width: 50%;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(195, 0, 255);
+    border: none;
+}
+.input-box{
+        width: 100%;
+        border-radius: 20px;
+        margin: 8px;
+        padding: 5px;
+        border: 1px solid;
+        outline: none;
+}
+.title_vacancy{
+    color: rgb(195, 0, 255);
+    font-size: 30px;
+}
+.topp{
+    font-size: 40px;
+    margin-top:8%;
+    letter-spacing: 10px;
+}
+.forwork{
+    float:left; 
+    margin-left: 25%;
+    margin-top:10%
+}
+.forcompany{
+    float:left; 
+    margin-left: 20%;
+    margin-top:10%
+}
+.name{
+   font-size: 35px; 
+}
+.unname{
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+p{
+    text-align: center;
+    color: white;
+}
+.sign-right{
+    margin: 40px;
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: blue;
+}
+.sign-left{
+    margin: 40px;
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: purple;
+}
+
+.sub{
+    text-align: center;
+}
+.bolo{
+    margin-top: 0;
+    width: auto;
+    height: auto;
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container-md">
+{%for field,errors in form.errors.items()%}
+        {%for error in errors%}
+            <div class="alert alert-warning">
+                {{error}}
+            </div>
+        {%endfor%}
+    {%endfor%}
+    
+    <div class="vacancy">
+        <form method="post">
+            {{form.hidden_tag()}}
+            {%for message in get_flashed_messages()%}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+    {%endfor%}
+            <p class="title_vacancy">add vacancy</p>
+            <br>
+            {{form.name(class="input-box",placeholder=form.name.label.text)}}
+            {{form.compname(class="input-box",placeholder=form.compname.label.text)}}
+            {{form.text(class="input-box",placeholder=form.text.label.text)}}
+            {{form.salary(class="input-box",placeholder=form.salary.label.text)}}
+            {{form.button(class="sign")}}
+        </form>
+    </div>
+</div>
+{%endblock%}
